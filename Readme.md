@@ -1,6 +1,7 @@
 DRN-GSMPI
 DRNKITS-RASPBERRY PI GSM SHIELD KURULUM KILAVUZU
 
+Lütfen herhangi bir işleme başlamadan önce Kullanma Kılavuzunu inceleyiniz.
 
 1- Raspberry PI üzerinde son Raspbian sürümünün kurulu, sim kartın takılı ve PIN kodunun kaldırıldığından emin olduktan sonra aşağıdaki gibi bağlantıları yapalım ve güç adaptörünü fişe takalım.
 2- Ürün ile beraber gelen (veya https://github.com/EduBoxVAR/DRNKITS-Raspberry-GPRS linkinden dosyalar indirilebilir.) CD içerisinde “DRNKITS-Raspberry-GPRS.zip” dosyasını Desktop directory’sine (kullanıcı istediği yere kopyalayabilir) unzip ettikten sonra Terminal üzerinden aşağıdaki komutlar yazılır. 
