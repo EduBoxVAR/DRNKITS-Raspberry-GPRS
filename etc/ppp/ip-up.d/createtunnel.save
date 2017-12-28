@@ -1,0 +1,20 @@
+#! /bin/bash
+
+proces=$(pgrep 'ssh -f' --full)
+PORT=$(cat /etc/device/device-fwd-port)
+
+echo $proces
+
+if [ "$proces" ]; then
+echo "process running, killing ssh processes"
+sudo kill -9 `ps -ef | grep 'ssh -f' | grep -v grep | awk '{print $2}'`
+sleep 1000
+sudo ssh -f -R $PORT:localhost:22 cloud@cloud.raziel.io -N &
+fi 
+
+if [ -z "$proces" ]; then
+echo "No process running, creating tunnel"
+sleep 1000z
+sudo ssh -f -R $PORT:localhost:22 cloud@cloud.raziel.io -N &
+fi
+
