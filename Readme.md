@@ -15,27 +15,39 @@ Lütfen herhangi bir işleme başlamadan önce Kullanma Kılavuzunu inceleyiniz.
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ sudo ./modem_setUP.sh
 
  4- Kurulum tamamlandıkan sonra bluetooth servislerini devre dışı bırakmak için aşağıdaki komutu çalıştırın.
+	
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ systemctl mask serial-getty@ttyAMA0.service
 
 5- Sonra modem Raspberry PI GPIO pinleri aracılığıyla çalıştırılır. 
+
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ ./modem_powerUp.sh
+	
 
 6- internet bağlantısı için;
+
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ chmod +x ./ppp¬-creator.sh
+	
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ sudo ./ppp-¬creator.sh mgbs ttyAMA0 
+	
 
 7- Modem ile haberleşme ve internet bağlantısı için gerekli bütün ayarlar yapılmıştır. 
     Rasperry PI reboot edilir. 
 
 8- Terminal üzerinden “sudo pppd call gprs” veya “sudo pon gprs” veya bu komutların sonuna “&” eklenerek arka planda bağlantının devam etmesi sağlanır. Yani “sudo pppd call gprs&” veya “sudo pon gprs&” şeklinde komutlar uygulanır.
+	
 	pi@raspberrypi:~ $ sudo pon gprs&
+	
 	[1] 2121
+	
 	pi@raspberrypi:~ $ pppd options in effect:
+	...
 
 9- Artık internet bağlantısı ppp protokolü üzerinden sağlanmıştır.
 	pi@raspberrypi:~ $ ifconfig ppp0 
 	ile interface’in almış olduğu IP adresi görülebilmektedir.
 
 10-pi@raspberrypi:~ $ ping www.google.com -I ppp0
-     komutu ile GPRS üzerinden www.google.com adresine ping işlemi başlatılmış olacaktır.
+
+   komutu ile GPRS üzerinden www.google.com adresine ping işlemi başlatılmış olacaktır.
+   
 11-pi@raspberrypi:~ $sudo poff   ile internet bağlantısı kesilmiş olacaktır.
