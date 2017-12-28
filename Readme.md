@@ -47,10 +47,12 @@ DRNKITS-RASPBERRY PI GSM SHIELD KURULUM KILAVUZU
 	
 	ile interface’in almış olduğu IP adresi görülebilmektedir.
 
-10-
-   pi@raspberrypi:~ $ ping www.google.com -I ppp0
+10- ping testi için;
 
-   komutu ile GPRS üzerinden www.google.com adresine ping işlemi başlatılmış olacaktır.
+    pi@raspberrypi:~ $ ping www.google.com -I ppp0
+
+    komutu ile GPRS üzerinden www.google.com adresine ping işlemi başlatılmış olacaktır.
    
-11-
+11- internet bağlantısının kesilmesi için;
+
     pi@raspberrypi:~ $sudo poff   ile internet bağlantısı kesilmiş olacaktır.
