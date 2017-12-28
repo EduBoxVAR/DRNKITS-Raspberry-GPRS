@@ -1,10 +1,9 @@
 DRN-GSMPI
 DRNKITS-RASPBERRY PI GSM SHIELD KURULUM KILAVUZU
 
-Lütfen herhangi bir işleme başlamadan önce Kullanma Kılavuzunu inceleyiniz.
 
 1- Raspberry PI üzerinde son Raspbian sürümünün kurulu, sim kartın takılı ve PIN kodunun kaldırıldığından emin olduktan sonra aşağıdaki gibi bağlantıları yapalım ve güç adaptörünü fişe takalım.
-2- Ürün ile beraber gelen (veya https://github.com/EduBoxVAR/DRNKITS-Raspberry-GPRS.git linkinden dosyalar indirilebilir.) CD içerisinde “DRNKITS-Raspberry-GPRS.zip” dosyasını Desktop directory’sine (kullanıcı istediği yere kopyalayabilir) unzip ettikten sonra Terminal üzerinden aşağıdaki komutlar yazılır. 
+2- Ürün ile beraber gelen (veya https://github.com/EduBoxVAR/DRNKITS-Raspberry-GPRS linkinden dosyalar indirilebilir.) CD içerisinde “DRNKITS-Raspberry-GPRS.zip” dosyasını Desktop directory’sine (kullanıcı istediği yere kopyalayabilir) unzip ettikten sonra Terminal üzerinden aşağıdaki komutlar yazılır. 
 
 	pi@raspberrypi:~ $ cd Desktop/DRNKITS-Raspberry-GPRS/
 	pi@raspberrypi:~/Desktop/DRNKITS-Raspberry-GPRS $ 
@@ -35,19 +34,23 @@ Lütfen herhangi bir işleme başlamadan önce Kullanma Kılavuzunu inceleyiniz.
 
 8- Terminal üzerinden “sudo pppd call gprs” veya “sudo pon gprs” veya bu komutların sonuna “&” eklenerek arka planda bağlantının devam etmesi sağlanır. Yani “sudo pppd call gprs&” veya “sudo pon gprs&” şeklinde komutlar uygulanır.
 	
+	
 	pi@raspberrypi:~ $ sudo pon gprs&
-	
-	[1] 2121
-	
+	[1] 2121	
 	pi@raspberrypi:~ $ pppd options in effect:
+	
 	...
 
 9- Artık internet bağlantısı ppp protokolü üzerinden sağlanmıştır.
+
 	pi@raspberrypi:~ $ ifconfig ppp0 
+	
 	ile interface’in almış olduğu IP adresi görülebilmektedir.
 
-10-pi@raspberrypi:~ $ ping www.google.com -I ppp0
+10-
+   pi@raspberrypi:~ $ ping www.google.com -I ppp0
 
    komutu ile GPRS üzerinden www.google.com adresine ping işlemi başlatılmış olacaktır.
    
-11-pi@raspberrypi:~ $sudo poff   ile internet bağlantısı kesilmiş olacaktır.
+11-
+    pi@raspberrypi:~ $sudo poff   ile internet bağlantısı kesilmiş olacaktır.
